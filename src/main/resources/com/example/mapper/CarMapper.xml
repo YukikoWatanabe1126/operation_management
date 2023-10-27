@@ -22,4 +22,7 @@
         <!-- 実行するSQLを定義する -->
         SELECT * FROM CARS
     </select>
+    <insert id="insert" useGeneratedKeys="true" keyColumn="ID" keyProperty="id">
+        INSERT INTO CARS (ID, NAME,PASSENGERS) VALUES (CAR_ID_SEQ.nextval, #{name},#{passengers})
+    </insert>
 </mapper>
