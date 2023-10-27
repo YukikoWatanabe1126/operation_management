@@ -4,7 +4,7 @@ public class Car {
 
 	private int id;
 	private String name;
-	private int passenger;
+	private int passengers;
 
 	public int getId() {
 		return this.id;
@@ -14,8 +14,8 @@ public class Car {
 		return this.name;
 	}
 	
-	public int getpassengers() {
-		return this.passenger;
+	public int getPassengers() {
+		return this.passengers;
 	}
 	
 	public void setId(Integer id) {
@@ -26,7 +26,7 @@ public class Car {
 		this.name = name;
 	}
 	
-	public void setpassengers(Integer passenger) {
-		this.passenger = passenger;
+	public void setPassengers(Integer passenger) {
+		this.passengers = passenger;
 	}
 }
