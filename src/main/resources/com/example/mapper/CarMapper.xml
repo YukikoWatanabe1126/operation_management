@@ -13,25 +13,30 @@
         <!-- resultタグで主キー以外のカラムとフィールドを紐づける -->
         <result column="NAME" property="name"/>
         <result column="PASSENGERS" property="passengers"/>
+        <association property="driver" javaType="com.example.entity.Driver">
+            <id column="D_ID" property="id"/>
+            <result column="D_NAME" property="name"/>
+        </association>
     </resultMap>
 
     <!-- データを取得する時はselectタグを使用する -->
     <!-- id属性に紐づけるメソッド名を定義する -->
     <!-- resultMap属性にはメソッドの返り値となるEntityを定義する（返り値がListでも要素となるEntityを指定する） -->
     <select id="findAll" resultMap="carmap">
-    SELECT *
-    FROM CARS
-    <where>
-        <if test="carId != null">
-            ID = #{carId}
-        </if>
-        <if test="carName != null">
-            OR NAME = #{carName}
-        </if>
-        <if test="carPassengers != null">
-            OR PASSENGERS = #{carPassengers}
-        </if>
-    </where>
+  		SELECT
+    C.ID,
+    C.NAME,
+    C.PASSENGERS,
+    D.ID AS D_ID,
+    D.NAME AS D_NAME
+FROM
+    CARS C
+INNER JOIN
+    DRIVERS D
+ON
+    D.CAR_ID = C.ID
+WHERE
+            C.ID = #{car.id}
 </select>
     <insert id="insert" useGeneratedKeys="true" keyColumn="ID" keyProperty="id">
         INSERT INTO CARS (ID, NAME,PASSENGERS) VALUES (CAR_ID_SEQ.nextval, #{name},#{passengers})

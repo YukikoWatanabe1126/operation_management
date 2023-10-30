@@ -2,31 +2,49 @@ package com.example.entity;
 
 public class Car {
 
-	private int id;
-	private String name;
-	private int passengers;
+    private Integer id;
+    private String name;
+    private Integer passengers;
+    private Customer customer;
+    private Driver driver;
 
-	public int getId() {
-		return this.id;
-	}
-	
-	public String getName() {
-		return this.name;
-	}
-	
-	public int getPassengers() {
-		return this.passengers;
-	}
-	
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public void setPassengers(Integer passenger) {
-		this.passengers = passenger;
-	}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(Integer passengers) {
+        this.passengers = passengers;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
 }
