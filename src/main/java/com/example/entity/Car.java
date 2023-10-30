@@ -1,12 +1,14 @@
 package com.example.entity;
 
+import java.util.List;
+
 public class Car {
 
     private Integer id;
     private String name;
     private Integer passengers;
-   
     private Driver driver;
+    private List<Customer> customers;
 
     public Integer getId() {
         return id;
@@ -40,5 +42,13 @@ public class Car {
 
     public void setDriver(Driver driver) {
         this.driver = driver;
+    }
+    
+    public List<Customer> getCustomers(){
+    	return customers;
+    }
+    
+    public void setCustomers(List<Customer> customers) {
+    	this.customers = customers;
     }
 }

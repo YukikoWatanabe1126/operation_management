@@ -3,6 +3,7 @@ package com.example.entity;
 public class Customer {
 	private int id;
 	private String name;
+	private int carId;
 
 	public int getId() {
 		return id;
@@ -18,5 +19,13 @@ public class Customer {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public int getCarId() {
+		return this.carId;
+	}
+	
+	public void setCarId(int carId) {
+		this.carId = carId;
 	}
 }
