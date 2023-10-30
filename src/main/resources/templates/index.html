@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>車両一覧表示</title>
 </head>
+
 <body>
     <h1>検索フォーム</h1>
     <form th:action="@{/index}" method="get">
@@ -41,9 +43,10 @@
                 <td th:text="${car.name}"></td>
                 <td th:text="${car.passengers}"></td>
                 <td>
-					<form th:action="@{/edit/{id}(id=${car.id})}" method="get">
-                        <input type="submit" value="詳細">
-                    </form>
+                    <form th:action="@{/edit/{id}(id=${car.id})}" method="get">
+                        <input type="submit" value="詳細">
+                    </form>
+                </td>
                 <td>
                     <form th:action="@{'/edit/' + ${car.id}}" method="get">
                         <input type="submit" value="編集">
@@ -76,4 +79,5 @@
         </div>
     </form>
 </body>
+
 </html>

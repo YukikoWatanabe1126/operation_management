@@ -5,7 +5,7 @@ public class Car {
     private Integer id;
     private String name;
     private Integer passengers;
-    private Customer customer;
+   
     private Driver driver;
 
     public Integer getId() {
@@ -32,13 +32,7 @@ public class Car {
         this.passengers = passengers;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+    
 
     public Driver getDriver() {
         return driver;
